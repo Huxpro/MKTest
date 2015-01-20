@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0P7-3U-Eoe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Todo-->
+        <scene sceneID="lnR-WT-7yX">
+            <objects>
+                <tableViewController id="UMr-a7-WU9" customClass="TodoViewController" customModule="firstTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oVQ-7s-Qkm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" rowHeight="65" id="aQ3-EI-WVG" customClass="MKTableViewCell" customModule="firstTodo" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQ3-EI-WVG" id="IqU-NJ-aL7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5P-Gb-J4v">
+                                            <rect key="frame" x="45" y="22" width="231" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_element_checkbox_normal" highlightedImage="ic_element_checkbox_pressed" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-r2-QHk">
+                                            <rect key="frame" x="12" y="19" width="25" height="27"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UMr-a7-WU9" id="tox-9I-fz8"/>
+                            <outlet property="delegate" destination="UMr-a7-WU9" id="2QT-vZ-h5r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Todo" id="vpR-ZK-047">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FD1-SF-Ft4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="HHI-HU-qQQ" kind="show" id="Cs7-gt-J3E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2j-22-PIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="442"/>
+        </scene>
+        <!--New Todo-->
+        <scene sceneID="yip-f2-dmk">
+            <objects>
+                <viewController id="HHI-HU-qQQ" customClass="NewTodoViewController" customModule="firstTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eFe-1c-F9k"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gt2-pW-33k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fur-sc-GMn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4U7-zh-gs5">
+                                <rect key="frame" x="0.0" y="98" width="414" height="54"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write new todo here?" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uCq-F5-B9B" customClass="MKTextField" customModule="firstTodo" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="12" width="300" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uCq-F5-B9B" secondAttribute="trailing" constant="12" id="18p-e4-uiz"/>
+                                    <constraint firstItem="uCq-F5-B9B" firstAttribute="leading" secondItem="4U7-zh-gs5" secondAttribute="leading" constant="12" id="B1p-fh-hhb"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZdF-Un-MaV" customClass="MKTextField" customModule="firstTodo" customModuleProvider="target">
+                                <rect key="frame" x="35" y="364" width="265" height="38"/>
+                                <color key="tintColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0u-S7-cXZ" customClass="MKTextField" customModule="firstTodo" customModuleProvider="target">
+                                <rect key="frame" x="35" y="298" width="265" height="38"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.50196078430000002" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vh-zC-Bts" customClass="MKTextField" customModule="firstTodo" customModuleProvider="target">
+                                <rect key="frame" x="65" y="193" width="265" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94679214015151514" green="0.94679214015151514" blue="0.94679214015151514" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4U7-zh-gs5" firstAttribute="width" secondItem="Fur-sc-GMn" secondAttribute="width" id="QEi-mQ-Jpf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Todo" id="t5n-BS-NXq">
+                        <barButtonItem key="rightBarButtonItem" title="save" id="tJs-O8-MIp">
+                            <connections>
+                                <action selector="onSave:" destination="HHI-HU-qQQ" id="XCh-MV-xOr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="newText" destination="uCq-F5-B9B" id="L2v-qi-i2a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d5E-k3-YuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356.5" y="500.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pcb-Hw-KOY">
+            <objects>
+                <navigationController id="0P7-3U-Eoe" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hsG-vM-N4u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.27843137254901962" green="0.6705882352941176" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UMr-a7-WU9" kind="relationship" relationship="rootViewController" id="kX3-62-zHV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTb-oc-i9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607" y="442"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_element_checkbox_normal" width="30" height="30"/>
+        <image name="ic_element_checkbox_pressed" width="30" height="30"/>
+    </resources>
+</document>
